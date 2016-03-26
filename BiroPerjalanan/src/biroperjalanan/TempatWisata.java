@@ -38,4 +38,8 @@ public class TempatWisata {
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
+    @Override
+    public String toString() {
+        return "Nama: " + nama +"\n"+ "Alamat" + alamat  ;
+    }
 }

@@ -5,20 +5,30 @@
  */
 package biroperjalanan;
 
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Date;
+
 /**
  *
  * @author Kurniawan
  */
 public class Perjalanan {
-   private String idJalan;
+    private String idJalan;
     private Pelanggan[] pelanggan;
     private PaketWisata paket;
     private int jumlahPelanggan;
-    private int harga;
+    
+    private String tanggal;
+    public String getIdJalan() {
+        return idJalan;
+    }
 
-    public Perjalanan(String idJalan) {
+    public Perjalanan(String idJalan, String tanggal,int jum) {
         this.idJalan = idJalan;
-        pelanggan=new Pelanggan[8];
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        this.tanggal= sdf.format(tanggal);
+        pelanggan=new Pelanggan[jum];
     }
     
     public void addPelanggan(Pelanggan p){
@@ -41,13 +51,6 @@ public class Perjalanan {
         return jumlahPelanggan;
     }
     
-    public int getHarga() {
-        return harga;
-    }
-
-    public void setHarga(int harga) {
-        this.harga = harga;
-    }
     public Pelanggan getPelanggan(long id) {
         int i=0;
         while (pelanggan[i].getIdKTP()!=id) {
@@ -55,4 +58,10 @@ public class Perjalanan {
         }
         return pelanggan[i];
     }
+
+    @Override
+    public String toString() {
+        return "Perjalanan{" + "idJalan=" + idJalan + ", pelanggan=" + Arrays.toString(pelanggan) + ", paket=" + paket + ", jumlahPelanggan=" + jumlahPelanggan +  ", tanggal=" + tanggal + '}';
+    }
+    
 }
