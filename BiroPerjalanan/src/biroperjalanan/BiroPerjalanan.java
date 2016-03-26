@@ -17,7 +17,7 @@ public class BiroPerjalanan {
     public static void main(String[] args) {
         // TODO code application logic here
         Petugas p = new Petugas("Muhammad", "Jl. GOR", 885458);
-        p.setId(0001);
+        p.setId("PGW-001");
         p.setUserName("Hamba Allah");
         p.setPass("hamba");
 
@@ -43,14 +43,12 @@ public class BiroPerjalanan {
         pkt1.addTempatWisata(tmp3);
        
 
-        Perjalanan jln1 = new Perjalanan("JLN001");
+        Perjalanan jln1 = new Perjalanan("JLN001","14-06-2016",4);
         jln1.addPelanggan(pl1);
         jln1.addPelanggan(pl2);
         jln1.addPelanggan(pl3);
         jln1.addPelanggan(pl4);
         jln1.setPaket(pkt1);
-        jln1.setHarga(900000);
-
         System.out.println("==============Data Perjalanan===============");
         System.out.println("Pelanggan: ");
         for (int i = 0; i < jln1.getJumlahPelanggan(); i++) {
@@ -60,7 +58,7 @@ public class BiroPerjalanan {
         for (int j = 0; j < jln1.getPaket().getJumlahWisata(); j++) {
             System.out.println((j + 1) + ". " + jln1.getPaket().getTempatWisata(j).getNama());
         }
-        System.out.println("Harga: RP." + jln1.getHarga()+",-/orang");
+        System.out.println("Harga: RP." + jln1.getPaket().getHarga()+",-/orang");
     }
     
 }
