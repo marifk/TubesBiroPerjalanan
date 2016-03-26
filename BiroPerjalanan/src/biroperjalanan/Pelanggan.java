@@ -23,4 +23,8 @@ public class Pelanggan extends Orang{
     public void setIdKTP(long idKTP) {
         this.idKTP = idKTP;
     }
+    @Override
+    public String toString() {
+        return super.toString()+"\n"+"ID KTP: " + idKTP  ;
+    }
 }

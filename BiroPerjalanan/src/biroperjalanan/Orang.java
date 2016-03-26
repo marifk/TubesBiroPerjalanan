@@ -43,4 +43,8 @@ public abstract class Orang {
     public void setNoTlp(long noTlp) {
         this.noTlp = noTlp;
     }
+    @Override
+    public String toString() {
+        return "Nama: " + nama +"\n"+ "Alamat: " + alamat+"\n" + "No. Telp: " + noTlp ;
+    }
 }

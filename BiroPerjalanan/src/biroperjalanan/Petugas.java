@@ -10,7 +10,7 @@ package biroperjalanan;
  * @author Kurniawan
  */
 public class Petugas extends Orang {
-    private long id;
+    private String id;
     private String userName;
     private String pass;
     
@@ -18,11 +18,11 @@ public class Petugas extends Orang {
        super(nama,alamat,noTlp);
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -40,5 +40,9 @@ public class Petugas extends Orang {
 
     public void setPass(String pass) {
         this.pass = pass;
+    }
+    @Override
+    public String toString() {
+        return super.toString()+"\n"+"Username: " + userName +"\n"+ "Password: " + pass ;
     }
 }
