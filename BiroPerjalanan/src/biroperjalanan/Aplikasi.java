@@ -6,160 +6,131 @@
 package biroperjalanan;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
  *
  * @author Kurniawan
  */
-public class Aplikasi {
+public class Aplikasi implements Serializable {
 
-    private Petugas[] daftarPetugas;
-    private int jumPetugas;
-    private Pelanggan[] daftarPelanggan;
-    private int jumPelanggan;
-    private Perjalanan[] daftarPerjalanan;
-    private int jumPerjalanan;
-    private PaketWisata[] daftarPaketWisata;
-    private int jumPaket;
-    private TempatWisata[] daftarTempatWisata;
-    private int jumTempat;
+    private static ArrayList<Petugas> daftarPetugas = new ArrayList<Petugas>();
+    private static ArrayList<Pelanggan> daftarPelanggan = new ArrayList<Pelanggan>();
+    private static ArrayList<Perjalanan> daftarPerjalanan = new ArrayList<Perjalanan>();
+    private static ArrayList<PaketWisata> daftarPaketWisata = new ArrayList<PaketWisata>();
+    private static ArrayList<TempatWisata> daftarTempatWisata = new ArrayList<TempatWisata>();
 
     public void addPetugas(Petugas pt) {
-        //  daftarPetugas.add(pt);
-        daftarPetugas = new Petugas[10];
-        daftarPetugas[jumPetugas] = pt;
-        jumPetugas++;
+        daftarPetugas.add(pt);
     }
 
     public Petugas getPetugas(String id) {
         Petugas p = null;
-        for (int j = 0; j < jumPetugas; j++) {
-            if (daftarPetugas[j].getId().equals(id)) {
-                p = daftarPetugas[j];
+        for (Petugas dp : daftarPetugas) {
+            if (dp.getId().equals(id)) {
+                p = dp;
             }
-
         }
         return p;
     }
 
     public void deletePetugas(String id) {
-        Petugas p = null;
-        for (int j = 0; j < jumPetugas; j++) {
-            if (daftarPetugas[j].getId().equals(id)) {
-                p = daftarPetugas[j];
+        for (int i = 0; i < daftarPetugas.size(); i++) {
+            if (daftarPetugas.get(i).getId().equals(id)) {
+                daftarPetugas.remove(i);
             }
-
         }
-        p = null;
     }
 
     public void addPelanggan(Pelanggan pl) {
-        daftarPelanggan = new Pelanggan[20];
-        daftarPelanggan[jumPelanggan] = pl;
-        jumPelanggan++;
+        daftarPelanggan.add(pl);
     }
 
     public Pelanggan getPelanggan(long idKTP) {
-        int i = 0;
-        while (daftarPelanggan[i].getIdKTP() != idKTP) {
-            i++;
+        Pelanggan pl = null;
+        for (Pelanggan plp : daftarPelanggan) {
+            if (plp.getIdKTP() == idKTP) {
+                pl = plp;
+            }
         }
-        return daftarPelanggan[i];
+        return pl;
     }
 
     public void deletePelanggan(long idKTP) {
-        int i = 0;
-        while (daftarPelanggan[i].getIdKTP() != idKTP) {
-            i++;
+        for (int i = 0; i < daftarPelanggan.size(); i++) {
+            if (daftarPelanggan.get(i).getIdKTP() == idKTP) {
+                daftarPelanggan.remove(i);
+            }
         }
-
-        daftarPelanggan[i] = null;
     }
 
     public void addPerjalanan(Perjalanan j) {
-        daftarPerjalanan = new Perjalanan[10];
-        daftarPerjalanan[jumPerjalanan] = j;
-        jumPerjalanan++;
+        daftarPerjalanan.add(j);
 
     }
 
     public Perjalanan getPerjalanan(String id) {
         Perjalanan j = null;
-        for (int i = 0; i < jumPerjalanan; i++) {
-            if (daftarPerjalanan[i].getIdJalan().equals(id)) {
-                j = daftarPerjalanan[i];
+        for (Perjalanan jp : daftarPerjalanan) {
+            if (jp.getIdJalan().equals(id)) {
+                j = jp;
             }
-
         }
         return j;
     }
 
     public void deletePerjalanan(String id) {
-        Perjalanan j = null;
-        for (int i = 0; i < jumPerjalanan; i++) {
-            if (daftarPerjalanan[i].getIdJalan().equals(id)) {
-                j = daftarPerjalanan[i];
+        for (int i = 0; i < daftarPerjalanan.size(); i++) {
+            if (daftarPerjalanan.get(i).getIdJalan().equals(id)) {
+                daftarPerjalanan.remove(i);
             }
-
         }
-        j = null;
     }
 
     public void addPaketWisata(PaketWisata p) {
-        daftarPaketWisata = new PaketWisata[10];
-        daftarPaketWisata[jumPaket] = p;
-        jumPaket++;
+        daftarPaketWisata.add(p);
     }
 
     public PaketWisata getPaketWisata(String id) {
         PaketWisata pk = null;
-        for (int i = 0; i < jumPaket; i++) {
-            if (daftarPaketWisata[i].getIdPaket().equals(id)) {
-                pk = daftarPaketWisata[i];
+        for (PaketWisata pkp : daftarPaketWisata) {
+            if (pkp.getIdPaket().equals(id)) {
+                pk = pkp;
             }
-
         }
         return pk;
     }
 
     public void deletePaketWisata(String id) {
-        PaketWisata pk = null;
-        for (int i = 0; i < jumPaket; i++) {
-            if (daftarPaketWisata[i].getIdPaket().equals(id)) {
-                pk = daftarPaketWisata[i];
+        for (int i = 0; i < daftarPaketWisata.size(); i++) {
+            if (daftarPaketWisata.get(i).getIdPaket().equals(id)) {
+                daftarPaketWisata.remove(i);
             }
-
         }
-        pk = null;
     }
 
     public void addTempatWisata(TempatWisata w) {
-        daftarTempatWisata = new TempatWisata[20];
-        daftarTempatWisata[jumTempat] = w;
-        jumTempat++;
+        daftarTempatWisata.add(w);
     }
 
     public TempatWisata getTempatWisata(String kode) {
         TempatWisata tm = null;
-        for (int i = 0; i < jumTempat; i++) {
-            if (daftarTempatWisata[i].getKode().equals(kode)) {
-                tm = daftarTempatWisata[i];
+        for (TempatWisata tp : daftarTempatWisata) {
+            if (tp.getKode().equals(kode)) {
+                tm = tp;
             }
-
         }
         return tm;
     }
 
     public void deleteTempatWisata(String kode) {
-        TempatWisata tm = null;
-        for (int i = 0; i < jumTempat; i++) {
-            if (daftarTempatWisata[i].getKode().equals(kode)) {
-                tm = daftarTempatWisata[i];
+        for (int i = 0; i < daftarTempatWisata.size(); i++) {
+            if (daftarTempatWisata.get(i).getKode().equals(kode)) {
+                daftarTempatWisata.remove(i);
             }
-
         }
-        tm = null;
     }
 
     public void menuSatu(Petugas pt) {
@@ -222,16 +193,13 @@ public class Aplikasi {
         deletePerjalanan(id);
     }
 
-    public Petugas[] getPetugasFromFile() {
-        Petugas[] petugas = new Petugas[jumPetugas];
+    public ArrayList<Petugas> getPetugasFromFile() {
+        ArrayList<Petugas> petugas = new ArrayList<Petugas>();
         try {
             FileInputStream fis = new FileInputStream("petugas.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            for (int i = 0; i < jumPetugas; i++) {
-                ois.readObject();
-                petugas = (Petugas[]) ois.readObject();
-            }
+            petugas = (ArrayList<Petugas>) ois.readObject();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -239,13 +207,13 @@ public class Aplikasi {
         return petugas;
     }
 
-    public Pelanggan[] getPelangganFromFile() {
-        Pelanggan[] pelanggan = new Pelanggan[jumPelanggan];
+    public ArrayList<Pelanggan> getPelangganFromFile() {
+        ArrayList<Pelanggan> pelanggan = new ArrayList<Pelanggan>();
         try {
             FileInputStream fis = new FileInputStream("pelanggan.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            Pelanggan[] pl = (Pelanggan[]) ois.readObject();
+            ArrayList<Pelanggan> pl = (ArrayList<Pelanggan>) ois.readObject();
             pelanggan = pl;
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -253,13 +221,13 @@ public class Aplikasi {
         return pelanggan;
     }
 
-    public TempatWisata[] getTempatWisataFromFile() {
-        TempatWisata[] tempat = new TempatWisata[jumTempat];
+    public ArrayList<TempatWisata> getTempatWisataFromFile() {
+        ArrayList<TempatWisata> tempat = new ArrayList<TempatWisata>();
         try {
             FileInputStream fis = new FileInputStream("tempat.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            TempatWisata[] w = (TempatWisata[]) ois.readObject();
+            ArrayList<TempatWisata> w = (ArrayList<TempatWisata>) ois.readObject();
             tempat = w;
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -267,13 +235,13 @@ public class Aplikasi {
         return tempat;
     }
 
-    public PaketWisata[] getPaketWisataFromFile() {
-        PaketWisata[] paket = new PaketWisata[jumPaket];
+    public ArrayList<PaketWisata> getPaketWisataFromFile() {
+        ArrayList<PaketWisata> paket = new ArrayList<PaketWisata>();
         try {
             FileInputStream fis = new FileInputStream("paket.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            PaketWisata[] p = (PaketWisata[]) ois.readObject();
+            ArrayList<PaketWisata> p = (ArrayList<PaketWisata>) ois.readObject();
             paket = p;
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -281,13 +249,13 @@ public class Aplikasi {
         return paket;
     }
 
-    public Perjalanan[] getPerjalananFromFile() {
-        Perjalanan[] jalan = new Perjalanan[jumPerjalanan];
+    public ArrayList<Perjalanan> getPerjalananFromFile() {
+        ArrayList<Perjalanan> jalan = new ArrayList<Perjalanan>();
         try {
             FileInputStream fis = new FileInputStream("jalan.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            Perjalanan[] j = (Perjalanan[]) ois.readObject();
+            ArrayList<Perjalanan> j = (ArrayList<Perjalanan>) ois.readObject();
             jalan = j;
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -295,53 +263,57 @@ public class Aplikasi {
         return jalan;
     }
 
-    public void filePetugas(Petugas[] daftarPetugas) {
+    public void filePetugas(ArrayList<Petugas> daftarPetugas) {
         try (FileOutputStream fos = new FileOutputStream("petugas.txt");
                 ObjectOutputStream oos = new ObjectOutputStream(fos);) {
             oos.writeObject(daftarPetugas);
+            oos.flush();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public void filePelanggan(Pelanggan[] daftarPelanggan) {
+    public void filePelanggan(ArrayList<Pelanggan> daftarPelanggan) {
         try (FileOutputStream fos = new FileOutputStream("pelanggan.txt");
                 ObjectOutputStream oos = new ObjectOutputStream(fos);) {
             oos.writeObject(daftarPelanggan);
+            oos.flush();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public void fileTempat(TempatWisata[] daftarTempatWisata) {
+    public void fileTempat(ArrayList<TempatWisata> daftarTempatWisata) {
         try (FileOutputStream fos = new FileOutputStream("tempat.txt");
                 ObjectOutputStream oos = new ObjectOutputStream(fos);) {
             oos.writeObject(daftarTempatWisata);
+            oos.flush();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public void filePaket(PaketWisata[] daftarPaketWisata) {
+    public void filePaket(ArrayList<PaketWisata> daftarPaketWisata) {
         try (FileOutputStream fos = new FileOutputStream("paket.txt");
                 ObjectOutputStream oos = new ObjectOutputStream(fos);) {
             oos.writeObject(daftarPaketWisata);
+            oos.flush();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public void fileJalan(Perjalanan[] daftarPerjalanan) {
+    public void fileJalan(ArrayList<Perjalanan> daftarPerjalanan) {
         try (FileOutputStream fos = new FileOutputStream("jalan.txt");
                 ObjectOutputStream oos = new ObjectOutputStream(fos);) {
             oos.writeObject(this.daftarPerjalanan);
+            oos.flush();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
     public void mainMenu() {
-
         Scanner input = new Scanner(System.in);
         Scanner angka = new Scanner(System.in);
 
@@ -381,6 +353,7 @@ public class Aplikasi {
                                 try {
                                     System.out.print("Masukkan ID Petugas: ");
                                     id = input.next();
+
                                     Petugas c = getPetugas(id);
                                     if (c == null) {
                                         System.out.print("Masukkan Nama Petugas: ");
@@ -393,10 +366,8 @@ public class Aplikasi {
                                         user = input.next();
                                         System.out.print("Masukkan Password: ");
                                         pass = input.next();
-                                        Petugas pt = new Petugas(nama, alamat, no);
-                                        pt.setId(id);
-                                        pt.setUserName(user);
-                                        pt.setPass(pass);
+                                        Petugas pt = new Petugas(id, user, pass, nama, alamat, no);
+
                                         menuSatu(pt);
                                         filePetugas(daftarPetugas);
                                     } else {
@@ -409,11 +380,14 @@ public class Aplikasi {
                                 break;
                             case 2:
                                 System.out.println("Daftar Petugas: ");
+                                //System.out.println(Arrays.toString(getPetugasFromFile()));
+                                // bacaPetugas(daftarPetugas);
+                                // System.out.println(daftarPetugas[1].toString());
                                 try {
-                                    for (int i = 0; i < jumPetugas; i++) {
-                                        System.out.println(daftarPetugas[i].toString());
+                                    for (int i = 0; i < daftarPetugas.size(); i++) {
+                                        System.out.println("Petugas-" + (i + 1) + ":");
+                                        System.out.println(daftarPetugas.get(i).toString());
                                         System.out.println("-------------------------");
-
                                     }
                                 } catch (NullPointerException e) {
                                     System.out.println("Data Tidak ada");
@@ -422,29 +396,20 @@ public class Aplikasi {
                             case 3:
                                 try {
                                     System.out.print("Masukkan ID Petugas yang dicari: ");
-                                    id = input.nextLine();
-                                    Petugas c = getPetugas(id);
-                                    if (c != null) {
-                                        menuDua(id);
-                                    } else {
-                                        System.out.println("Data Tidak ada");
-                                    }
+                                    id = input.next();
+                                    menuDua(id);
                                 } catch (NullPointerException e) {
-                                    System.out.println("SALAH");
+                                    System.out.println("Data Tidak ada");
                                 }
                                 break;
                             case 4:
                                 try {
                                     System.out.print("Masukkan ID Petugas yang akan di hapus: ");
-                                    id = input.nextLine();
-                                    Petugas c = getPetugas(id);
-                                    if (c != null) {
-                                        menuTiga(id);
-                                        filePetugas(daftarPetugas);
-                                        System.out.println("Data yang ber-ID " + id + " telah dihapus");
-                                    } else {
-                                        System.out.println("Data Tidak ada");
-                                    }
+                                    id = input.next();
+                                    menuTiga(id);
+                                    filePetugas(daftarPetugas);
+                                    System.out.println("Data yang ber-ID " + id + " telah dihapus");
+
                                 } catch (NullPointerException e) {
                                     System.out.println("Data Tidak ada");
                                 }
@@ -473,8 +438,8 @@ public class Aplikasi {
                                         alamat = input.next();
                                         System.out.print("Masukkan No. Tlp: ");
                                         no = angka.nextLong();
-                                        Pelanggan pl = new Pelanggan(nama, alamat, no);
-                                        pl.setIdKTP(ktp);
+                                        Pelanggan pl = new Pelanggan(ktp, nama, alamat, no);
+
                                         menuEmpat(pl);
                                         filePelanggan(daftarPelanggan);
                                     } else {
@@ -487,10 +452,10 @@ public class Aplikasi {
                             case 2:
                                 System.out.println("Daftar Pelanggan: ");
                                 try {
-                                    for (int i = 0; i < jumPelanggan; i++) {
-                                        System.out.println(daftarPelanggan[i].toString());
+                                    for (int i = 0; i < daftarPelanggan.size(); i++) {
+                                        System.out.println("Pelanggan-" + (i + 1) + ":");
+                                        System.out.println(daftarPelanggan.get(i).toString());
                                         System.out.println("-------------------------");
-
                                     }
                                 } catch (NullPointerException e) {
                                     System.out.println("Data Tidak ada");
@@ -500,28 +465,18 @@ public class Aplikasi {
                                 try {
                                     System.out.print("Masukkan ID KTP yang dicari: ");
                                     ktp = input.nextLong();
-                                    Pelanggan pc = getPelanggan(ktp);
-                                    if (pc != null) {
-                                        menuLima(ktp);
-                                    } else {
-                                        System.out.println("Data Tidak ada");
-                                    }
+                                    menuLima(ktp);
                                 } catch (NullPointerException e) {
-                                    System.out.println("SALAH");
+                                    System.out.println("Data Tidak ada");
                                 }
                                 break;
                             case 4:
                                 try {
                                     System.out.print("Masukkan ID KTP yang akan dihapus: ");
                                     ktp = input.nextLong();
-                                    Pelanggan pc = getPelanggan(ktp);
-                                    if (pc != null) {
-                                        menuEnam(ktp);
-                                        filePelanggan(daftarPelanggan);
-                                        System.out.println("Data yang ber-idKTP " + ktp + " telah dihapus");
-                                    } else {
-                                        System.out.println("Data Tidak ada");
-                                    }
+                                    menuEnam(ktp);
+                                    filePelanggan(daftarPelanggan);
+                                    System.out.println("Data yang ber-idKTP " + ktp + " telah dihapus");
                                 } catch (NullPointerException e) {
                                     System.out.println("Data Tidak ada");
                                 }
@@ -561,8 +516,9 @@ public class Aplikasi {
                             case 2:
                                 System.out.println("Daftar Tempat Wisata: ");
                                 try {
-                                    for (int i = 0; i < jumTempat; i++) {
-                                        System.out.println(daftarTempatWisata[i].toString());
+                                    for (int i = 0; i < daftarTempatWisata.size(); i++) {
+                                        System.out.println("Pelanggan-" + (i + 1) + ":");
+                                        System.out.println(daftarTempatWisata.get(i).toString());
                                         System.out.println("-------------------------");
                                     }
                                 } catch (NullPointerException e) {
@@ -573,28 +529,18 @@ public class Aplikasi {
                                 try {
                                     System.out.print("Masukkan ID Tempat yang dicari: ");
                                     id = input.next();
-                                    TempatWisata wc = getTempatWisata(id);
-                                    if (wc != null) {
-                                        menuDelapan(id);
-                                    } else {
-                                        System.out.println("Data Tidak ada");
-                                    }
+                                    menuDelapan(id);
                                 } catch (NullPointerException e) {
-                                    System.out.println("SALAH");
+                                    System.out.println("Data Tidak ada");
                                 }
                                 break;
                             case 4:
                                 try {
                                     System.out.print("Masukkan ID Tempat yang akan dihapus: ");
                                     id = input.next();
-                                    TempatWisata wc = getTempatWisata(id);
-                                    if (wc != null) {
-                                        menuSembilan(id);
-                                        fileTempat(daftarTempatWisata);
-                                        System.out.println("Data yang ber-id " + id + " telah dihapus");
-                                    } else {
-                                        System.out.println("Data Tidak ada");
-                                    }
+                                    menuSembilan(id);
+                                    fileTempat(daftarTempatWisata);
+                                    System.out.println("Data yang ber-id " + id + " telah dihapus");
                                 } catch (NullPointerException e) {
                                     System.out.println("Data Tidak ada");
                                 }
@@ -618,7 +564,9 @@ public class Aplikasi {
                                     id = input.next();
                                     PaketWisata pkc = getPaketWisata(id);
                                     if (pkc == null) {
-                                        PaketWisata p = new PaketWisata(id);
+                                        System.out.print("Masukkan Harga: ");
+                                        hr = angka.nextInt();
+                                        PaketWisata p = new PaketWisata(id, hr);
                                         for (int i = 0; i < 3; i++) {
                                             System.out.print("Masukkan ID Tempat " + (i + 1) + ": ");
                                             tmp = input.next();
@@ -627,9 +575,6 @@ public class Aplikasi {
                                                 p.addTempatWisata(tc);
                                             }
                                         }
-                                        System.out.print("Masukkan Harga: ");
-                                        hr = angka.nextInt();
-                                        p.setHarga(hr);
                                         menuSepuluh(p);
                                         filePaket(daftarPaketWisata);
                                     } else {
@@ -642,8 +587,9 @@ public class Aplikasi {
                             case 2:
                                 System.out.println("Daftar Paket Wisata: ");
                                 try {
-                                    for (int i = 0; i < jumPaket; i++) {
-                                        System.out.println(daftarPaketWisata[i].toString());
+                                    for (int i = 0; i < daftarPaketWisata.size(); i++) {
+                                        System.out.println("Pelanggan-" + (i + 1) + ":");
+                                        System.out.println(daftarPaketWisata.get(i).toString());
                                         System.out.println("-------------------------");
                                     }
                                 } catch (NullPointerException e) {
@@ -654,28 +600,18 @@ public class Aplikasi {
                                 try {
                                     System.out.print("Masukkan ID Paket yang dicari: ");
                                     id = input.next();
-                                    PaketWisata pkc = getPaketWisata(id);
-                                    if (pkc != null) {
-                                        menuSebelas(id);
-                                    } else {
-                                        System.out.println("Data Tidak ada");
-                                    }
+                                    menuSebelas(id);
                                 } catch (NullPointerException e) {
-                                    System.out.println("SALAH");
+                                    System.out.println("Data Tidak ada");
                                 }
                                 break;
                             case 4:
                                 try {
                                     System.out.print("Masukkan ID Paket yang akan dihapus: ");
                                     id = input.next();
-                                    PaketWisata pkc = getPaketWisata(id);
-                                    if (pkc != null) {
-                                        menuDuaBelas(id);
-                                        filePaket(daftarPaketWisata);
-                                        System.out.println("Data yang ber-id " + id + " telah dihapus");
-                                    } else {
-                                        System.out.println("Data Tidak ada");
-                                    }
+                                    menuDuaBelas(id);
+                                    filePaket(daftarPaketWisata);
+                                    System.out.println("Data yang ber-id " + id + " telah dihapus");
                                 } catch (NullPointerException e) {
                                     System.out.println("Data Tidak ada");
                                 }
@@ -734,8 +670,9 @@ public class Aplikasi {
                             case 2:
                                 System.out.println("Daftar Perjalanan: ");
                                 try {
-                                    for (int i = 0; i < jumPerjalanan; i++) {
-                                        System.out.println(daftarPerjalanan[i].toString());
+                                    for (int i = 0; i < daftarPerjalanan.size(); i++) {
+                                        System.out.println("Pelanggan-" + (i + 1) + ":");
+                                        System.out.println(daftarPerjalanan.get(i).toString());
                                         System.out.println("-------------------------");
                                     }
                                 } catch (NullPointerException e) {
@@ -747,12 +684,7 @@ public class Aplikasi {
                                 try {
                                     System.out.print("Masukkan ID Perjalanan yang dicari: ");
                                     id = input.next();
-                                    Perjalanan jc = getPerjalanan(id);
-                                    if (jc == null) {
-                                        menuEmpatBelas(id);
-                                    } else {
-                                        System.out.println("Perjalanan Tidak ada");
-                                    }
+                                    menuEmpatBelas(id);
                                 } catch (NullPointerException e) {
                                     System.out.println("Data Tidak ada");
                                 }
@@ -761,14 +693,9 @@ public class Aplikasi {
                                 try {
                                     System.out.print("Masukkan ID Perjalanan yang akan dihapus: ");
                                     id = input.next();
-                                    Perjalanan jc = getPerjalanan(id);
-                                    if (jc == null) {
-                                        menuLimaBelas(id);
-                                        fileJalan(daftarPerjalanan);
-                                        System.out.println("Data yang ber-id " + id + " telah dihapus");
-                                    } else {
-                                        System.out.println("Perjalanan Tidak ada");
-                                    }
+                                    menuLimaBelas(id);
+                                    fileJalan(daftarPerjalanan);
+                                    System.out.println("Data yang ber-id " + id + " telah dihapus");
                                 } catch (NullPointerException e) {
                                     System.out.println("Data Tidak ada");
                                 }
@@ -786,5 +713,4 @@ public class Aplikasi {
             System.out.println("Salah Input Kak");
         }
     }
-
 }

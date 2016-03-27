@@ -6,20 +6,24 @@
 package biroperjalanan;
 
 import java.util.Arrays;
+
 /**
  *
  * @author Kurniawan
  */
 public class PaketWisata {
+
     private String idPaket;
     private TempatWisata[] daftarTujuanWisata;
     private int jumlahWisata;
     private int harga;
 
-    public PaketWisata(String idPaket) {
+    public PaketWisata(String idPaket, int harga) {
         this.idPaket = idPaket;
+        this.harga = harga;
         daftarTujuanWisata = new TempatWisata[3];
     }
+
 
     public int getJumlahWisata() {
         return jumlahWisata;
@@ -59,13 +63,8 @@ public class PaketWisata {
         return harga;
     }
 
-    public void setHarga(int harga) {
-        this.harga = harga;
-    }
-
     @Override
     public String toString() {
         return "PaketWisata{" + "idPaket=" + idPaket + ", daftarTujuanWisata=" + Arrays.toString(daftarTujuanWisata) + ", harga=" + harga + '}';
     }
-
 }

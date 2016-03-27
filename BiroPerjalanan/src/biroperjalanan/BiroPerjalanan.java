@@ -16,19 +16,17 @@ public class BiroPerjalanan {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Petugas p = new Petugas("Muhammad", "Jl. GOR", 885458);
-        p.setId("PGW-001");
-        p.setUserName("Hamba Allah");
-        p.setPass("hamba");
+        Petugas p = new Petugas("PGW-001","Hamba Allah","hamba","Muhammad", "Jl. GOR", 885458);
+       
 
-        Pelanggan pl1 = new Pelanggan("Arif", "Komplek PU", 896751);
-        pl1.setIdKTP(131022128);
-        Pelanggan pl2 = new Pelanggan("Kurniawan", "Toga", 221244);
-        pl2.setIdKTP(130921219);
-        Pelanggan pl3 = new Pelanggan("Selvi", "PGA", 140145);
-        pl3.setIdKTP(131012145);
-        Pelanggan pl4 = new Pelanggan("Aliya", "Moh. Toha", 142414);
-        pl4.setIdKTP(130931342);
+        Pelanggan pl1 = new Pelanggan(131022128,"Arif", "Komplek PU", 896751);
+       
+        Pelanggan pl2 = new Pelanggan(130921219,"Kurniawan", "Toga", 221244);
+        
+        Pelanggan pl3 = new Pelanggan(131012145,"Selvi", "PGA", 140145);
+        
+        Pelanggan pl4 = new Pelanggan(130931342,"Aliya", "Moh. Toha", 142414);
+       
 
         TempatWisata tmp1 = new TempatWisata("WST001", "Jatim Park", "Malang");
         TempatWisata tmp2 = new TempatWisata("WST002", "Pulau Sempu", "Malang");
@@ -37,11 +35,10 @@ public class BiroPerjalanan {
         TempatWisata tmp5 = new TempatWisata("WST005", "Situ Patenggang", "Bandung");
         TempatWisata tmp6 = new TempatWisata("WST006", "Tangkuban Perahu", "Bandung");
         
-        PaketWisata pkt1 = new PaketWisata("PKT001");
+        PaketWisata pkt1 = new PaketWisata("PKT001",90000000);
         pkt1.addTempatWisata(tmp1);
         pkt1.addTempatWisata(tmp2);
         pkt1.addTempatWisata(tmp3);
-       
 
         Perjalanan jln1 = new Perjalanan("JLN001","14-06-2016",4);
         jln1.addPelanggan(pl1);
@@ -58,6 +55,7 @@ public class BiroPerjalanan {
         for (int j = 0; j < jln1.getPaket().getJumlahWisata(); j++) {
             System.out.println((j + 1) + ". " + jln1.getPaket().getTempatWisata(j).getNama());
         }
+        System.out.println("Tanggal: "+jln1.getTanggal());
         System.out.println("Harga: RP." + jln1.getPaket().getHarga()+",-/orang");
     }
     

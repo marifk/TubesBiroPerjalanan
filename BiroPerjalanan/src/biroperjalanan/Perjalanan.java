@@ -27,7 +27,7 @@ public class Perjalanan {
     public Perjalanan(String idJalan, String tanggal,int jum) {
         this.idJalan = idJalan;
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        this.tanggal= sdf.format(tanggal);
+        this.tanggal= tanggal;
         pelanggan=new Pelanggan[jum];
     }
     
@@ -51,12 +51,17 @@ public class Perjalanan {
         return jumlahPelanggan;
     }
     
+   
     public Pelanggan getPelanggan(long id) {
         int i=0;
         while (pelanggan[i].getIdKTP()!=id) {
             i++;
         }
         return pelanggan[i];
+    }
+
+    public String getTanggal() {
+        return tanggal;
     }
 
     @Override
