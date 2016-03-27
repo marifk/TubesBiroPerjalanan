@@ -5,44 +5,34 @@
  */
 package biroperjalanan;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Kurniawan
  */
-public class Petugas extends Orang {
+public class Petugas extends Orang implements Serializable{
     private String id;
     private String userName;
     private String pass;
     
-    public Petugas(String nama, String alamat, long noTlp){
-       super(nama,alamat,noTlp);
+    public Petugas(String id, String userName, String pass, String nama, String alamat, long noTlp) {
+        super(nama, alamat, noTlp);
+        this.id = id;
+        this.userName = userName;
+        this.pass = pass;
     }
-
     public String getId() {
         return id;
     }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getUserName() {
         return userName;
     }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
     public String getPass() {
         return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
     }
     @Override
     public String toString() {
         return super.toString()+"\n"+"Username: " + userName +"\n"+ "Password: " + pass ;
-    }
+    } 
 }

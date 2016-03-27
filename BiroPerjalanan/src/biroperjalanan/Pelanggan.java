@@ -9,19 +9,15 @@ package biroperjalanan;
  *
  * @author Kurniawan
  */
-public class Pelanggan extends Orang{
+public class Pelanggan extends Orang {
     private long idKTP;
-    
-    public Pelanggan(String nama, String alamat, long noTlp) {
-        super(nama, alamat, noTlp);
-    }
 
+    public Pelanggan(long idKTP, String nama, String alamat, long noTlp) {
+        super(nama, alamat, noTlp);
+        this.idKTP = idKTP;
+    }
     public long getIdKTP() {
         return idKTP;
-    }
-
-    public void setIdKTP(long idKTP) {
-        this.idKTP = idKTP;
     }
     @Override
     public String toString() {
