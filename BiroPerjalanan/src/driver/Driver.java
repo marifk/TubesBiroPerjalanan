@@ -5,7 +5,8 @@
  */
 package driver;
 
-import biroperjalanan.Aplikasi;
+import model.Aplikasi;
+
 
 /**
  *

@@ -8,22 +8,21 @@ package view;
 import java.awt.Button;
 import java.awt.TextField;
 import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import model.Aplikasi;
 import model.View;
+
 
 /**
  *
- * @author Aliya
+ * @author Kurniawan
  */
-public class addPetugas extends javax.swing.JInternalFrame implements View {
+public class Register extends javax.swing.JFrame implements View{
 
     /**
-     * Creates new form addPetugas
+     * Creates new form Register
      */
-    public addPetugas() {
+    public Register() {
         initComponents();
     }
 
@@ -47,13 +46,14 @@ public class addPetugas extends javax.swing.JInternalFrame implements View {
         notlp = new java.awt.TextField();
         alamat = new java.awt.TextField();
         nama = new java.awt.TextField();
+        kembali = new java.awt.Button();
+        Registrasi = new java.awt.Button();
         jLabel1 = new javax.swing.JLabel();
         txID = new javax.swing.JTextField();
-        btnSave = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(479, 423));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Petugas"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Registrasi"));
 
         label4.setText("Nama");
 
@@ -65,14 +65,22 @@ public class addPetugas extends javax.swing.JInternalFrame implements View {
 
         label3.setText("Password");
 
-        jLabel1.setText("ID");
-
-        btnSave.setText("Save");
-        btnSave.addActionListener(new java.awt.event.ActionListener() {
+        kembali.setActionCommand("Kembali");
+        kembali.setLabel("Back");
+        kembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaveActionPerformed(evt);
+                kembaliActionPerformed(evt);
             }
         });
+
+        Registrasi.setLabel("Registrasi");
+        Registrasi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegistrasiActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("ID");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -96,8 +104,11 @@ public class addPetugas extends javax.swing.JInternalFrame implements View {
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(notlp, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnSave)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(kembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(24, 24, 24)
+                                        .addComponent(Registrasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(notlp, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -137,9 +148,11 @@ public class addPetugas extends javax.swing.JInternalFrame implements View {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSave)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Registrasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -149,36 +162,28 @@ public class addPetugas extends javax.swing.JInternalFrame implements View {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+    private void RegistrasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrasiActionPerformed
         // TODO add your handling code here:
-        Aplikasi app = new Aplikasi();
-        try {
-            if (getTxID().equals("") || getNama().equals("") || getAlamat().equals("") || getNotlp() == 0 || getUsername().equals("") || getPassword().equals("")) {
-                JOptionPane.showMessageDialog(null, "Data Tidak Boleh Kosong");
-            } else if (app.getPetugas(getTxID()) == null) {
-                model.Petugas pt = new model.Petugas(getTxID(), getUsername(), getPassword(), getNama(), getAlamat(), getNotlp());
-                app.addPetugas(pt);
-                JOptionPane.showMessageDialog(null, "Add Petugas Berhasil");
-            } else {
-                JOptionPane.showMessageDialog(null, "Data Sudah ada");
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Inputan salah");
-        }
-    }//GEN-LAST:event_btnSaveActionPerformed
+    }//GEN-LAST:event_RegistrasiActionPerformed
+
+    private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_kembaliActionPerformed
+
 
     public String getAlamat() {
         return alamat.getText();
@@ -186,10 +191,6 @@ public class addPetugas extends javax.swing.JInternalFrame implements View {
 
     public void setAlamat(String alamat) {
         this.alamat.setText(alamat);
-    }
-
-    public Object getBtnSave() {
-        return btnSave;
     }
 
     public String getNama() {
@@ -213,15 +214,7 @@ public class addPetugas extends javax.swing.JInternalFrame implements View {
     }
 
     public void setPassword(String password) {
-        this.password.getText();
-    }
-
-    public String getTxID() {
-        return txID.getText();
-    }
-
-    public void setTxID(String txID) {
-        this.txID.setText(txID);
+        this.password.setText(password);
     }
 
     public String getUsername() {
@@ -232,12 +225,31 @@ public class addPetugas extends javax.swing.JInternalFrame implements View {
         this.username.setText(username);
     }
 
+    public Object getRegistrasi() {
+        return Registrasi;
+    }
+
+    public Object getKembali() {
+        return kembali;
+    }
+
+    public String getTxID() {
+        return txID.getText();
+    }
+
+    public void setTxID(String txID) {
+        this.txID.setText(txID);
+    }
+
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Button Registrasi;
     private java.awt.TextField alamat;
-    private javax.swing.JButton btnSave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private java.awt.Button kembali;
     private java.awt.Label label2;
     private java.awt.Label label3;
     private java.awt.Label label4;
@@ -251,7 +263,8 @@ public class addPetugas extends javax.swing.JInternalFrame implements View {
     // End of variables declaration//GEN-END:variables
 
     @Override
-    public void addListener(ActionListener e) {
-        btnSave.addActionListener(e);
+    public void addListener(ActionListener ae) {
+        Registrasi.addActionListener(ae);
+        kembali.addActionListener(ae);
     }
 }
