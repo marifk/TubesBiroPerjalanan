@@ -40,7 +40,7 @@ public class BiroPerjalanan {
         pkt1.addTempatWisata(tmp2);
         pkt1.addTempatWisata(tmp3);
 
-        Perjalanan jln1 = new Perjalanan("JLN001","14-06-2016",4);
+        Perjalanan jln1 = new Perjalanan("JLN001","14-06-2016");
         jln1.addPelanggan(pl1);
         jln1.addPelanggan(pl2);
         jln1.addPelanggan(pl3);

@@ -5,6 +5,7 @@
  */
 package biroperjalanan;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -13,7 +14,7 @@ import java.util.Date;
  *
  * @author Kurniawan
  */
-public class Perjalanan {
+public class Perjalanan implements Serializable{
     private String idJalan;
     private Pelanggan[] pelanggan;
     private PaketWisata paket;
@@ -24,11 +25,11 @@ public class Perjalanan {
         return idJalan;
     }
 
-    public Perjalanan(String idJalan, String tanggal,int jum) {
+    public Perjalanan(String idJalan, String tanggal) {
         this.idJalan = idJalan;
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         this.tanggal= tanggal;
-        pelanggan=new Pelanggan[jum];
+        pelanggan=new Pelanggan[10];
     }
     
     public void addPelanggan(Pelanggan p){

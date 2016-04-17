@@ -5,13 +5,14 @@
  */
 package biroperjalanan;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 /**
  *
  * @author Kurniawan
  */
-public class PaketWisata {
+public class PaketWisata implements Serializable{
 
     private String idPaket;
     private TempatWisata[] daftarTujuanWisata;

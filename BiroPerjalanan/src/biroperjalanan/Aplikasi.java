@@ -640,7 +640,7 @@ public class Aplikasi implements Serializable {
                                         tgl = input.next();
                                         System.out.print("Masukkan Jumlah Pelanggan: ");
                                         hr = angka.nextInt();
-                                        Perjalanan j = new Perjalanan(id, tgl, hr);
+                                        Perjalanan j = new Perjalanan(id, tgl);
                                         System.out.print("Masukkan ID Paket: ");
                                         id = input.next();
                                         PaketWisata pkc = getPaketWisata(id);
