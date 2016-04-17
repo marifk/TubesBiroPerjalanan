@@ -1,9 +1,9 @@
 # TubesBiroPerjalanan
-*Repo Tubes Kelompok 11
+Repo Tubes Kelompok 11
 
-*Aplikasi Biro Perjalanan ini merupakan suatu aplikasi untuk petugas Biro Perjalanan yang digunakan untuk memproses pemesanan pelanggan terhadap suatu perjalanan ke tempat wisata yang sudah tersedia.
+Aplikasi Biro Perjalanan ini merupakan suatu aplikasi untuk petugas Biro Perjalanan yang digunakan untuk memproses pemesanan pelanggan terhadap suatu perjalanan ke tempat wisata yang sudah tersedia.
 
-*Cara menggunakan aplikasi Biro Perjalanan:
+Cara menggunakan aplikasi Biro Perjalanan:
 * Petugas melakukan login pada aplikasi tersebut, bila petugas masih belum mempunyai akun atau belum terdaftar.
 * Petugas dapat melakukan register
 * Setelah melakukan proses login, aplikasi akan menampilkan halaman utama aplikasi
