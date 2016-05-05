@@ -5,7 +5,7 @@ Aplikasi Biro Perjalanan ini merupakan suatu aplikasi untuk petugas Biro Perjala
 
 Cara menggunakan aplikasi Biro Perjalanan:
 
-    Download library jcalender terlebih dahulu di https://drive.google.com/file/d/0B0BWMHZ7SKh8cHRXeUFiSERXb0U/view?usp=sharing
+Download library jcalender terlebih dahulu di https://drive.google.com/file/d/0B0BWMHZ7SKh8cHRXeUFiSERXb0U/view?usp=sharing
 
 * Petugas melakukan login pada aplikasi tersebut, bila petugas masih belum mempunyai akun atau belum terdaftar.
 * Petugas dapat melakukan register
