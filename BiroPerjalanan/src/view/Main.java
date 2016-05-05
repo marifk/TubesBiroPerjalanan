@@ -49,27 +49,32 @@ public class Main extends javax.swing.JFrame implements View {
         petugas = new javax.swing.JMenuItem();
         cariPetugas = new javax.swing.JMenuItem();
         delPetugas = new javax.swing.JMenuItem();
+        editPet = new javax.swing.JMenuItem();
         mpelanggan = new javax.swing.JMenu();
         pelanggan = new javax.swing.JMenuItem();
         datPelanggan = new javax.swing.JMenuItem();
         cariPelanggan = new javax.swing.JMenuItem();
         delPelanggan = new javax.swing.JMenuItem();
+        editPelang = new javax.swing.JMenuItem();
         wisata = new javax.swing.JMenu();
         tempat = new javax.swing.JMenuItem();
         datTempat = new javax.swing.JMenuItem();
         cariTempat = new javax.swing.JMenuItem();
         delTempat = new javax.swing.JMenuItem();
+        editTmp = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         paket = new javax.swing.JMenuItem();
         datPaket = new javax.swing.JMenuItem();
         cariPaket = new javax.swing.JMenuItem();
         delPaket = new javax.swing.JMenuItem();
+        editPak = new javax.swing.JMenuItem();
         transaksi = new javax.swing.JMenu();
         jalan = new javax.swing.JMenuItem();
         addTransaksi = new javax.swing.JMenuItem();
         datJalan = new javax.swing.JMenuItem();
         cariJalan = new javax.swing.JMenuItem();
         delJalan = new javax.swing.JMenuItem();
+        editJal = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -165,6 +170,9 @@ public class Main extends javax.swing.JFrame implements View {
         });
         mpetugas.add(delPetugas);
 
+        editPet.setText("Edit Petugas");
+        mpetugas.add(editPet);
+
         jMenuBar1.add(mpetugas);
 
         mpelanggan.setText("Pelanggan");
@@ -206,6 +214,14 @@ public class Main extends javax.swing.JFrame implements View {
         });
         mpelanggan.add(delPelanggan);
 
+        editPelang.setText("Edit Pelanggan");
+        editPelang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editPelangActionPerformed(evt);
+            }
+        });
+        mpelanggan.add(editPelang);
+
         jMenuBar1.add(mpelanggan);
 
         wisata.setText("Wisata");
@@ -242,6 +258,9 @@ public class Main extends javax.swing.JFrame implements View {
         });
         wisata.add(delTempat);
 
+        editTmp.setText("Edit Tempat");
+        wisata.add(editTmp);
+
         jMenuBar1.add(wisata);
 
         jMenu1.setText("Paket");
@@ -277,6 +296,9 @@ public class Main extends javax.swing.JFrame implements View {
             }
         });
         jMenu1.add(delPaket);
+
+        editPak.setText("Edit Paket");
+        jMenu1.add(editPak);
 
         jMenuBar1.add(jMenu1);
 
@@ -321,6 +343,9 @@ public class Main extends javax.swing.JFrame implements View {
             }
         });
         transaksi.add(delJalan);
+
+        editJal.setText("Edit Perjalanan");
+        transaksi.add(editJal);
 
         jMenuBar1.add(transaksi);
 
@@ -392,8 +417,7 @@ public class Main extends javax.swing.JFrame implements View {
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
         
-        
-        
+
     }//GEN-LAST:event_logoutActionPerformed
 
     private void petugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_petugasActionPerformed
@@ -403,7 +427,7 @@ public class Main extends javax.swing.JFrame implements View {
 
     private void pelangganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pelangganActionPerformed
         // TODO add your handling code here:
-       
+        
     }//GEN-LAST:event_pelangganActionPerformed
 
     private void jalanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jalanActionPerformed
@@ -476,6 +500,10 @@ public class Main extends javax.swing.JFrame implements View {
     private void delJalanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delJalanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_delJalanActionPerformed
+
+    private void editPelangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editPelangActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editPelangActionPerformed
     
     public Object getPaket() {
         return paket;
@@ -508,85 +536,106 @@ public class Main extends javax.swing.JFrame implements View {
     public Object getLogout() {
         return logout;
     }
-
+    
     public Object getCariJalan() {
         return cariJalan;
     }
-
+    
     public Object getCariPaket() {
         return cariPaket;
     }
-
+    
     public Object getCariPelanggan() {
         return cariPelanggan;
     }
-
+    
     public Object getCariPetugas() {
         return cariPetugas;
     }
-
+    
     public Object getCariTempat() {
         return cariTempat;
     }
-
+    
     public Object getDatJalan() {
         return datJalan;
     }
-
+    
     public Object getDatPaket() {
         return datPaket;
     }
-
+    
     public Object getDatPelanggan() {
         return datPelanggan;
     }
-
+    
     public Object getDatTempat() {
         return datTempat;
     }
-
+    
     public Object getDelJalan() {
         return delJalan;
     }
-
+    
     public Object getDelPaket() {
         return delPaket;
     }
-
+    
     public Object getDelPelanggan() {
         return delPelanggan;
     }
-
+    
     public Object getDelPetugas() {
         return delPetugas;
     }
-
+    
     public Object getDelTempat() {
         return delTempat;
     }
-
+    
     public Object getDesktopPane() {
         return desktopPane;
     }
-
+    
     public void setDesktopPane(Component d) {
         this.desktopPane.add(d);
     }
-    public void setRemoveDP(){
+
+    public void setRemoveDP() {
         desktopPane.removeAll();
     }
+
     public Object getAddPetugas() {
         return addPetugas;
     }
-
+    
     public Object getExit() {
         return exit;
     }
-
+    
     public Object getAddTransaksi() {
         return addTransaksi;
     }
-
+    
+    public Object getEditJal() {
+        return editJal;
+    }
+    
+    public Object getEditPak() {
+        return editPak;
+    }
+    
+    public Object getEditPelang() {
+        return editPelang;
+    }
+    
+    public Object getEditPet() {
+        return editPet;
+    }
+    
+    public Object getEditTmp() {
+        return editTmp;
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -609,6 +658,11 @@ public class Main extends javax.swing.JFrame implements View {
     private javax.swing.JMenuItem delPetugas;
     private javax.swing.JMenuItem delTempat;
     private javax.swing.JDesktopPane desktopPane;
+    private javax.swing.JMenuItem editJal;
+    private javax.swing.JMenuItem editPak;
+    private javax.swing.JMenuItem editPelang;
+    private javax.swing.JMenuItem editPet;
+    private javax.swing.JMenuItem editTmp;
     private javax.swing.JMenuItem exit;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
@@ -635,26 +689,31 @@ public class Main extends javax.swing.JFrame implements View {
         petugas.addActionListener(ae);
         cariPetugas.addActionListener(ae);
         delPetugas.addActionListener(ae);
+        editPet.addActionListener(ae);
         
         pelanggan.addActionListener(ae);
         datPelanggan.addActionListener(ae);
         cariPelanggan.addActionListener(ae);
         delPelanggan.addActionListener(ae);
+        editPelang.addActionListener(ae);
         
         tempat.addActionListener(ae);
         datTempat.addActionListener(ae);
         cariTempat.addActionListener(ae);
         delTempat.addActionListener(ae);
+        editTmp.addActionListener(ae);
         
         paket.addActionListener(ae);
         datPaket.addActionListener(ae);
         cariPaket.addActionListener(ae);
         delPaket.addActionListener(ae);
+        editPak.addActionListener(ae);
         
         jalan.addActionListener(ae);
         addTransaksi.addActionListener(ae);
         datJalan.addActionListener(ae);
         cariJalan.addActionListener(ae);
         delJalan.addActionListener(ae);
+        editJal.addActionListener(ae);
     }
 }

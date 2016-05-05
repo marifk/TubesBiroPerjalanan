@@ -54,6 +54,7 @@ public class dataPelanggan extends javax.swing.JInternalFrame implements View{
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Pelanggan"));
 
+        datPl.setEditable(false);
         datPl.setColumns(20);
         datPl.setRows(5);
         jScrollPane1.setViewportView(datPl);

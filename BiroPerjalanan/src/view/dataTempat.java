@@ -38,6 +38,7 @@ public class dataTempat extends javax.swing.JInternalFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Tempat Wisata"));
 
+        datTempat.setEditable(false);
         datTempat.setColumns(20);
         datTempat.setRows(5);
         jScrollPane1.setViewportView(datTempat);

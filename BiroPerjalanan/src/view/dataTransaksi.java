@@ -38,6 +38,7 @@ public class dataTransaksi extends javax.swing.JInternalFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Transaksi"));
 
+        datTransaksi.setEditable(false);
         datTransaksi.setColumns(20);
         datTransaksi.setRows(5);
         jScrollPane1.setViewportView(datTransaksi);

@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Aliya
+ * @author Kurniawan
  */
 public class Petugas extends Orang implements Serializable {
 
@@ -34,6 +34,18 @@ public class Petugas extends Orang implements Serializable {
 
     public String getPass() {
         return pass;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 
     @Override

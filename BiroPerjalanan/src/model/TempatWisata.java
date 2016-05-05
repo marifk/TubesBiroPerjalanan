@@ -7,22 +7,34 @@ package model;
 
 import java.io.Serializable;
 
-
-
 /**
  *
- * @author widodo
+ * @author Kurniawan
  */
-public class TempatWisata implements Serializable{
+public class TempatWisata implements Serializable {
+
     private String kode;
     private String nama;
     private String alamat;
 
-    public TempatWisata (String kode,String nama, String alamat){
+    public TempatWisata(String kode, String nama, String alamat) {
         this.kode = kode;
         this.nama = nama;
         this.alamat = alamat;
     }
+
+    public void setKode(String kode) {
+        this.kode = kode;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
+
     public String getNama() {
         return nama;
     }
@@ -37,7 +49,7 @@ public class TempatWisata implements Serializable{
 
     @Override
     public String toString() {
-        return "Kode Tempat: "+kode+"\n"+"Nama: " + nama +"\n"+ "Alamat: " + alamat +"\n" ;
+        return "Kode Tempat: " + kode + "\n" + "Nama: " + nama + "\n" + "Alamat: " + alamat + "\n";
     }
-    
+
 }

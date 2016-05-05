@@ -40,6 +40,7 @@ public class Petugas extends javax.swing.JInternalFrame implements View {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Petugas"));
 
+        areaPetugas.setEditable(false);
         areaPetugas.setColumns(20);
         areaPetugas.setRows(5);
         jScrollPane1.setViewportView(areaPetugas);

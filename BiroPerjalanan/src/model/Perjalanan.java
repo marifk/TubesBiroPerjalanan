@@ -13,7 +13,7 @@ import java.util.Date;
 
 /**
  *
- * @author widodo
+ * @author Kurniawan
  */
 public class Perjalanan implements Serializable{
     private String idJalan;
@@ -63,6 +63,10 @@ public class Perjalanan implements Serializable{
 
     public String getTanggal() {
         return tanggal;
+    }
+
+    public void setTanggal(String tanggal) {
+        this.tanggal = tanggal;
     }
 
     @Override

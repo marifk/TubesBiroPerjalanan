@@ -23,7 +23,8 @@ import view.*;
  *
  * @author Kurniawan
  */
-public class Controller implements ActionListener{
+public class Controller implements ActionListener {
+
     private View view;
     private Aplikasi app;
 
@@ -457,6 +458,37 @@ public class Controller implements ActionListener{
                     app.save();
                     JOptionPane.showMessageDialog(null, "Terima Kasih");
                     System.exit(1);
+                } else if (source.equals(main.getEditJal())) {
+                    editPerjalanan ej = new editPerjalanan();
+                    main.setRemoveDP();
+                    main.setVisible(true);
+                    main.setDesktopPane(ej);
+                    ej.setVisible(true);
+
+                } else if (source.equals(main.getEditPak())) {
+                    editPaket epk = new editPaket();
+                    main.setRemoveDP();
+                    main.setVisible(true);
+                    main.setDesktopPane(epk);
+                    epk.setVisible(true);
+                } else if (source.equals(main.getEditPelang())) {
+                    editPelanggan epl = new editPelanggan();
+                    main.setRemoveDP();
+                    main.setVisible(true);
+                    main.setDesktopPane(epl);
+                    epl.setVisible(true);
+                } else if (source.equals(main.getEditPet())) {
+                    editPetugas ept = new editPetugas();
+                    main.setRemoveDP();
+                    main.setVisible(true);
+                    main.setDesktopPane(ept);
+                    ept.setVisible(true);
+                } else if (source.equals(main.getEditTmp())) {
+                    editTempat etm = new editTempat();
+                    main.setRemoveDP();
+                    main.setVisible(true);
+                    main.setDesktopPane(etm);
+                    etm.setVisible(true);
                 }
             }
         } catch (Exception e) {

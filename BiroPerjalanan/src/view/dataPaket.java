@@ -41,6 +41,7 @@ public class dataPaket extends javax.swing.JInternalFrame implements View{
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Paket Wisata"));
         jPanel1.setName(""); // NOI18N
 
+        datPaket.setEditable(false);
         datPaket.setColumns(20);
         datPaket.setRows(5);
         jScrollPane1.setViewportView(datPaket);

@@ -26,6 +26,10 @@ public class PaketWisata implements Serializable{
         daftarTujuanWisata = new TempatWisata[3];
     }
 
+    public void setHarga(int harga) {
+        this.harga = harga;
+    }
+
 
     public int getJumlahWisata() {
         return jumlahWisata;
@@ -42,6 +46,9 @@ public class PaketWisata implements Serializable{
 
     public TempatWisata getTempatWisata(int i) {
         return daftarTujuanWisata[i];
+    }
+    public void setTempat(int i, TempatWisata t){
+        daftarTujuanWisata[i]=t;
     }
 
     public TempatWisata getTempatWisata(String id) {
