@@ -4,6 +4,7 @@ Repo Tubes Kelompok 11
 Aplikasi Biro Perjalanan ini merupakan suatu aplikasi untuk petugas Biro Perjalanan yang digunakan untuk memproses pemesanan pelanggan terhadap suatu perjalanan ke tempat wisata yang sudah tersedia.
 
 Cara menggunakan aplikasi Biro Perjalanan:
+
     Download library jcalender terlebih dahulu di https://drive.google.com/file/d/0B0BWMHZ7SKh8cHRXeUFiSERXb0U/view?usp=sharing
 
 * Petugas melakukan login pada aplikasi tersebut, bila petugas masih belum mempunyai akun atau belum terdaftar.
